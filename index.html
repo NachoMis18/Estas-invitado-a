@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>18 Años - Nacho</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#05080b;
+    color:#edf9ff;
+
+    font-family:'Montserrat',sans-serif;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* =========================================
+   PARTICULAS DORADAS
+========================================= */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.particles span{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:#b8dfe9;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #b8dfe9,
+    0 0 22px rgba(184,223,233,0.8);
+
+    animation:float 10s linear infinite;
+
+    opacity:0;
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px) scale(1.5);
+        opacity:0;
+    }
+
+}
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.container{
+
+    width:100%;
+    max-width:560px;
+
+    margin:auto;
+
+    padding:30px 18px 100px;
+
+    text-align:center;
+
+}
+
+/* =========================================
+   TITULOS
+========================================= */
+
+.invited{
+
+    letter-spacing:7px;
+
+    font-size:13px;
+
+    color:#edf9ff;
+
+    margin-top:20px;
+
+}
+
+.name{
+
+    margin-top:25px;
+
+    font-size:42px;
+
+    line-height:1.2;
+
+    font-family:'Cinzel',serif;
+
+    background:linear-gradient(
+    to bottom,
+    #f4fbff,
+    #c4e1ec,
+    #7ea7b8);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.gold-line{
+
+    width:80%;
+
+    height:4px;
+
+    margin:30px auto;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    #b7dfe9,
+    #edf9ff,
+    #9dc6d8,
+    transparent);
+
+}
+
+/* =========================================
+   FOTO
+========================================= */
+
+.photo-frame{
+
+    width:250px;
+    height:250px;
+
+    margin:40px auto 90px;
+
+    border-radius:50%;
+
+    padding:5px;
+
+    background:linear-gradient(
+    135deg,
+    #5f8da1,
+    #dfeef5,
+    #8eb5c9);
+
+    box-shadow:
+    0 0 30px rgba(143,181,201,0.35);
+
+}
+
+.photo-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    display:block;
+
+}
+
+/* =========================================
+   DIAMANTE 18
+========================================= */
+
+.diamond{
+
+    width:230px;
+    height:230px;
+
+    margin:0 auto 70px;
+
+    border:4px solid #a9d4e6;
+
+    transform:rotate(45deg);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    box-shadow:
+    0 0 25px rgba(143,181,201,0.25);
+
+}
+
+.diamond::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:195px;
+    height:195px;
+
+    border:2px solid #b9dfe9;
+
+}
+
+.diamond-content{
+
+    transform:rotate(-45deg);
+
+}
+
+.diamond-content span{
+
+    display:block;
+
+    color:#cfeaf3;
+
+    font-size:20px;
+
+    margin-bottom:5px;
+
+}
+
+.diamond-content h1{
+
+    font-size:95px;
+
+    line-height:1;
+
+    font-family:'Cinzel',serif;
+
+    background:linear-gradient(
+    to bottom,
+    #f4fbff,
+    #c4e1ec,
+    #6f95a7);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* =========================================
+   PLAYER
+========================================= */
+
+.audio-player {
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  width:100%;
+  max-width:360px;
+
+  margin:auto;
+
+}
+
+.controls {
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:15px;
+
+  gap:15px;
+
+}
+
+/* PLAY */
+
+.play-pause-btn {
+
+  border:none;
+
+  cursor:pointer;
+
+  border-radius:50%;
+
+  width:65px;
+  height:65px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:linear-gradient(
+  145deg,
+  #dff4fb,
+  #a9d4e6,
+  #6d99b0);
+
+  box-shadow:
+  0 0 10px rgba(143,181,201,0.5);
+
+  transition:transform 0.2s ease;
+
+}
+
+.play-pause-btn:hover {
+
+  transform:scale(1.1);
+
+}
+
+.play-pause-btn img {
+
+  width:32px;
+  height:32px;
+
+}
+
+/* SKIP */
+
+.skip-btn {
+
+  background:none;
+
+  border:none;
+
+  cursor:pointer;
+
+}
+
+.skip-btn img {
+
+  width:30px;
+  height:30px;
+
+  filter:
+  brightness(0)
+  saturate(100%)
+  invert(74%)
+  sepia(24%)
+  saturate(420%)
+  hue-rotate(170deg)
+  brightness(115%)
+  contrast(92%);
+
+  transition:transform 0.2s ease;
+
+}
+
+.skip-btn:hover img {
+
+  transform:scale(1.2);
+
+}
+
+/* PROGRESS */
+
+.progress-container {
+
+  width:100%;
+
+  background:#1b2128;
+
+  border-radius:5px;
+
+  height:10px;
+
+  cursor:pointer;
+
+  margin-top:10px;
+
+  position:relative;
+
+}
+
+.progress {
+
+  background:linear-gradient(
+  90deg,
+  #dff4fb,
+  #a9d4e6,
+  #6d99b0);
+
+  height:100%;
+
+  width:0;
+
+  border-radius:5px;
+
+  position:relative;
+
+}
+
+.progress-indicator {
+
+  position:absolute;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  width:14px;
+  height:14px;
+
+  background:linear-gradient(
+  145deg,
+  #dff4fb,
+  #a9d4e6,
+  #6d99b0);
+
+  border-radius:50%;
+
+  left:0;
+
+  transition:left 0.1s ease;
+
+  box-shadow:
+  0 0 6px rgba(0,0,0,0.6);
+
+}
+
+/* TIME */
+
+.time-info {
+
+  font-size:14px;
+
+  color:#bfe0eb;
+
+  margin-top:8px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .audio-player{
+
+    max-width:100%;
+
+  }
+
+}
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.section{
+
+    margin-top:75px;
+
+}
+
+.section-title{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    font-size:34px;
+
+    line-height:1.3;
+
+    margin-bottom:15px;
+
+    font-family:'Cinzel',serif;
+
+    background:linear-gradient(
+    to bottom,
+    #f4fbff,
+    #c4e1ec,
+    #7ea7b8);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.section-icon{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(
+    135deg,
+    #6f9bb0,
+    #dceef7,
+    #9cc1d0);
+    box-shadow:
+    0 0 18px rgba(143,181,201,0.2);
+    transition:transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    opacity:0;
+    transform:translateY(14px) scale(0.95);
+}
+
+.section-icon.visible{
+
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+.section-icon:hover,
+.section-icon:focus-visible{
+
+    transform:translateY(-3px) scale(1.08);
+    box-shadow:
+    0 0 24px rgba(143,181,201,0.35);
+}
+
+.section-icon.animate{
+
+    animation:icon-pop 0.55s ease;
+}
+
+@keyframes icon-pop{
+
+    0%{transform:translateY(18px) scale(0.9); opacity:0;}
+    60%{transform:translateY(-6px) scale(1.08); opacity:1;}
+    100%{transform:translateY(0) scale(1); opacity:1;}
+}
+
+.section-icon svg{
+
+    width:20px;
+    height:20px;
+    fill:#050505;
+}
+
+.section-sub{
+
+    color:#cfeaf3;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.info{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#edf3f6;
+
+}
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+.time-box{
+
+    width:82px;
+    height:82px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    #eaf7fd,
+    #a9d4e6,
+    #6f9bb1);
+
+    padding:2px;
+
+    box-shadow:
+    0 0 15px rgba(143,181,201,0.3);
+
+}
+
+.time-inner{
+
+    width:100%;
+    height:100%;
+
+    border-radius:16px;
+
+    background:#050505;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.time-number{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#d5edf7;
+
+}
+
+.time-label{
+
+    font-size:10px;
+
+    color:#bfe0eb;
+
+    margin-top:4px;
+
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.gold-btn{
+
+    display:inline-block;
+
+    width:100%;
+    max-width:330px;
+
+    padding:18px 22px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-family:'Cinzel',serif;
+
+    color:#050505;
+
+    background:linear-gradient(
+    135deg,
+    #cfeaf3,
+    #9cc1d0,
+    #6f9bb1);
+
+    box-shadow:
+    0 0 20px rgba(143,181,201,0.25);
+
+    transition:0.3s;
+
+}
+
+.gold-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* =========================================
+   DESPLEGABLE
+========================================= */
+
+.dropdown-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:0.5s ease;
+
+}
+
+.dropdown-content.active{
+
+    max-height:500px;
+
+    margin-top:25px;
+
+}
+
+.dropdown-inner{
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(143,181,201,0.2);
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.dropdown-inner p{
+
+    color:#ddd;
+
+    line-height:1.7;
+
+}
+
+.dropdown-inner h2{
+
+    font-size:52px;
+
+    background:linear-gradient(
+    to bottom,
+    #f4fbff,
+    #c4e1ec,
+    #7ea7b8);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.dropdown-inner span{
+
+    color:#cfeaf3;
+
+    font-size:18px;
+
+}
+
+.alias-box{
+
+    margin:20px auto 0;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    width:auto;
+
+    padding:14px 22px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    #dceef7,
+    #9cc1d0,
+    #6f9bb1);
+
+    color:#050505;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.alias-box .alias-value{
+
+    display:inline-block;
+    color:#050505;
+
+}
+
+.copy-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.95);
+    cursor:pointer;
+    transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.copy-btn:hover{
+
+    transform:scale(1.05);
+    box-shadow:0 0 12px rgba(143,181,201,0.22);
+}
+
+.copy-btn svg{
+
+    width:16px;
+    height:16px;
+    fill:#6f9bb1;
+}
+
+.copy-btn.copied{
+
+    background:#b7dfe9;
+}
+
+.copy-btn.copied svg{
+
+    fill:#050505;
+}
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final{
+
+    margin-top:90px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    font-family:'Cinzel',serif;
+
+    color:#edf9ff;
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .name{
+
+        font-size:32px;
+
+    }
+
+    .photo-frame{
+
+        width:220px;
+        height:220px;
+
+        margin-bottom:100px;
+
+    }
+
+    .diamond{
+
+        width:200px;
+        height:200px;
+
+    }
+
+    .diamond::before{
+
+        width:165px;
+        height:165px;
+
+    }
+
+    .diamond-content h1{
+
+        font-size:80px;
+
+    }
+
+    .section-title{
+
+        font-size:30px;
+
+    }
+
+    .music-card{
+
+        padding:22px;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     PARTICULAS
+========================================= -->
+
+<div class="particles">
+
+<span style="left:5%; animation-delay:0s;"></span>
+<span style="left:15%; animation-delay:2s;"></span>
+<span style="left:25%; animation-delay:4s;"></span>
+<span style="left:35%; animation-delay:1s;"></span>
+<span style="left:45%; animation-delay:3s;"></span>
+<span style="left:55%; animation-delay:5s;"></span>
+<span style="left:65%; animation-delay:2s;"></span>
+<span style="left:75%; animation-delay:6s;"></span>
+<span style="left:85%; animation-delay:1s;"></span>
+<span style="left:95%; animation-delay:4s;"></span>
+
+<span style="left:10%; animation-delay:7s;"></span>
+<span style="left:30%; animation-delay:8s;"></span>
+<span style="left:50%; animation-delay:9s;"></span>
+<span style="left:70%; animation-delay:10s;"></span>
+<span style="left:90%; animation-delay:11s;"></span>
+
+</div>
+
+<div class="container">
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<div class="invited">
+ESTÁS INVITADO/A
+</div>
+
+<div class="name">
+NACHO
+</div>
+
+<div class="gold-line"></div>
+
+<!-- =========================================
+     FOTO
+========================================= -->
+
+<div class="photo-frame">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+alt="Nacho">
+
+</div>
+
+<!-- =========================================
+     18 AÑOS
+========================================= -->
+
+<div class="diamond">
+
+<div class="diamond-content">
+
+<span>MIS</span>
+
+<h1>18</h1>
+
+</div>
+
+</div>
+
+<!-- =========================================
+     PLAYER
+========================================= -->
+
+<div class="player">
+
+  <div class="audio-player">
+
+    <div class="controls">
+
+      <!-- RETROCEDER -->
+
+      <button class="skip-btn" onclick="skip(-10)">
+
+        <img
+        src="https://img.icons8.com/ios-filled/50/ffffff/rewind.png"
+        alt="Rewind">
+
+      </button>
+
+      <!-- PLAY -->
+
+      <button class="play-pause-btn"
+      onclick="togglePlayPause()">
+
+        <img
+        id="playPauseIcon"
+
+        src="https://img.icons8.com/ios-filled/50/000000/play.png"
+
+        alt="Play">
+
+      </button>
+
+      <!-- ADELANTAR -->
+
+      <button class="skip-btn"
+      onclick="skip(10)">
+
+        <img
+        src="https://img.icons8.com/ios-filled/50/ffffff/fast-forward.png"
+        alt="Forward">
+
+      </button>
+
+    </div>
+
+    <!-- BARRA -->
+
+    <div class="progress-container"
+    onclick="setProgress(event)">
+
+      <div class="progress"
+      id="progress"></div>
+
+      <div class="progress-indicator"
+      id="progress-indicator"></div>
+
+    </div>
+
+    <!-- TIEMPO -->
+
+    <div class="time-info">
+
+      <span id="current-time">
+        00:00
+      </span>
+
+      /
+
+      <span id="duration">
+        00:00
+      </span>
+
+    </div>
+
+    <!-- AUDIO -->
+
+    <audio id="audio"
+    preload="none"
+    loop>
+
+      <!-- CAMBIAR LINK -->
+
+      <source
+      src="https://github.com/HectorMis40/inicio/releases/download/Main/Danza.Kuduro.MIX.Limbo_.Algo.me.Gusta.de.Ti.-.Dj.Lucas.Herrera._.Wisin.y.Yandel_.Daddy.Yankee.M4A_128K.m4a"
+
+      type="audio/mp3">
+
+      Tu navegador no soporta audio.
+
+    </audio>
+
+  </div>
+
+</div>
+
+<p style="color:#cfeaf3; font-size:18px; line-height:1.8; margin:25px 0 0; font-weight:400; text-align:center; font-family:'Cinzel',serif; letter-spacing:0.5px; opacity:0.95;">
+Hay momentos irrepetibles en la vida,<br>
+pero compartirlos con ustedes los vuelve inolvidables.
+</p>
+
+<p style="margin:18px auto 0; text-align:center; font-family:'Cinzel',serif; font-size:20px; letter-spacing:1.3px; color:#dfeef5; opacity:0.95; line-height:1.5; font-weight:500;">
+TE INVITO A CELEBRAR MI FIESTA
+</p>
+
+<!-- =========================================
+     COUNTDOWN
+========================================= -->
+
+<div class="section">
+
+<div class="gold-line"></div>
+
+<div class="section-title">
+05 · 12 · 26
+</div>
+
+<div class="section-sub">
+¿CUÁNTO FALTA?
+</div>
+
+<div class="countdown">
+
+<div class="time-box">
+<div class="time-inner">
+<div class="time-number" id="days">00</div>
+<div class="time-label">DÍAS</div>
+</div>
+</div>
+
+<div class="time-box">
+<div class="time-inner">
+<div class="time-number" id="hours">00</div>
+<div class="time-label">HORAS</div>
+</div>
+</div>
+
+<div class="time-box">
+<div class="time-inner">
+<div class="time-number" id="minutes">00</div>
+<div class="time-label">MIN</div>
+</div>
+</div>
+
+<div class="time-box">
+<div class="time-inner">
+<div class="time-number" id="seconds">00</div>
+<div class="time-label">SEG</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================================
+     FIESTA
+========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+<span class="section-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
+</span>
+FIESTA
+</div>
+
+<div class="info">
+
+Recepción: 21:00 hs a 21:30 hs<br>
+Ingreso al salón: 21:30 hs<br>
+Cena: 22:00 hs, sin excepción<br><br>
+
+Salón: HEeventos
+
+</div>
+
+<a class="gold-btn"
+href="https://maps.google.com/maps?q=-31.5716195%2C-68.5593653&z=17&hl=es"
+target="_blank">
+
+¿CÓMO LLEGAR?
+
+</a>
+
+<p style="color:#cfeaf3; font-size:20px; line-height:1.8; margin:25px 0; font-weight:700;">
+Hagamos que sea una noche inolvidable.
+</p>
+
+<div class="section" style="margin-top:30px;">
+  <div class="section-title">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+      <span class="section-icon" aria-hidden="true" style="width:48px; height:48px; margin:0; overflow:hidden;">
+        <img src="https://github.com/kalattods23/misaudios/releases/download/test/icons8-vestido-de-novia-64.png" alt="Vestido" style="width:22px; height:22px; object-fit:contain; display:block; margin:auto;">
+      </span>
+      <span class="section-icon" aria-hidden="true" style="width:48px; height:48px; margin:0; overflow:hidden;">
+        <img src="https://github.com/kalattods23/misaudios/releases/download/test/icons8-traje-50.png" alt="Traje" style="width:22px; height:22px; object-fit:contain; display:block; margin:auto;">
+      </span>
+    </div>
+    VESTIMENTA
+  </div>
+  <div class="section-sub">Estrictamente formal</div>
+</div>
+
+</div>
+
+
+<!-- =========================================
+     CONFIRMACION
+========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+<span class="section-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M16 2h-4l-1-1h-2a2 2 0 00-2 2v2H4v18h16V4a2 2 0 00-2-2zm0 18H6V6h2v2h8V6h2v14zm-5-4l5-5-1.4-1.4L11 13.2 9.4 11.6 8 13l3 3z"/></svg>
+</span>
+CONFIRMÁ TU ASISTENCIA
+</div>
+
+<div class="section-sub">
+Hasta el día 07/11/26 · Obligatorio
+</div>
+
+<a class="gold-btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLSdhs945Ur7Czs2mLKKcfzGqcWV0mMCpqdTt6Es4F1i4FfKu-A/viewform?usp=publish-editor"
+target="_blank">
+
+CONFIRMAR ASISTENCIA
+
+</a>
+
+</div>
+
+<!-- =========================================
+     GALERÍA DIGITAL
+     PEGAR DEBAJO DE:
+     CONFIRMAR ASISTENCIA
+========================================= -->
+
+<div class="section">
+
+    <div class="section-title">
+<span class="section-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M20 5h-3.2l-1.8-2H8L6.2 5H3a2 2 0 00-2 2v12a2 2 0 002 2h18a2 2 0 002-2V7a2 2 0 00-2-2zm-8 14a5 5 0 115-5 5 5 0 01-5 5z"/></svg>
+</span>
+        COLABORACIÓN DE FOTOS
+    </div>
+
+    <div class="section-sub">
+        Compartí tus recuerdos de la noche
+    </div>
+
+    <div class="info">
+
+        Subí fotos o videos para revivir este momento inolvidable.
+
+    </div>
+
+    <!-- BOTON SUBIR -->
+    <!-- REEMPLAZAR LINK -->
+
+    <a class="gold-btn"
+    href="https://drive.google.com/drive/folders/14HfY7hsSh9m2L-MnQacLczD2a9GzOSvt?usp=drive_link"
+    target="_blank">
+
+        SUBIR FOTOS/VIDEOS
+
+    </a>
+
+</div>
+
+<!-- =========================================
+     PLAYLIST
+========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+<span class="section-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zm2.5 0c0 2.5-1.5 4.65-3.75 5.5v-2.08c1.17-.74 1.95-2.04 1.95-3.42s-.78-2.68-1.95-3.42V6.5C18.5 7.35 20 9.5 20 12z"/></svg>
+</span>
+
+NO HAY FIESTA<br>
+SIN BUENA MÚSICA
+
+</div>
+
+<div class="section-sub">
+
+¿QUÉ CANCIÓN NO PUEDE FALTAR?
+
+</div>
+
+<a class="gold-btn"
+href="https://open.spotify.com/playlist/1caGGZ8asHB8AjqSNNoHbM?si=dxPOryj7S2OtQzuLzz15_Q&pt=234ea88c6d1809e81fcf24a075e7f05b&pi=1RghlSGhSDWcK"
+target="_blank">
+
+RECOMENDAR
+
+</a>
+
+</div>
+
+<!-- =========================================
+     COLABORACIÓN
+========================================= -->
+
+<div class="section">
+
+<div class="section-title">
+<span class="section-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24"><path d="M20 12v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8h16zm0-2H4V8a2 2 0 012-2h3.5l1 2H14l1-2H18a2 2 0 012 2v2zm-8-1.5L10.5 6H12l1.5 2.5L15 6h1.5L14 8.5 12 10 10.5 8.5z"/></svg>
+</span>
+REGALO
+</div>
+
+<button class="gold-btn"
+onclick="toggleContribution()">
+
+VER REGALO
+
+</button>
+
+<div class="dropdown-content"
+id="contributionBox">
+
+<div class="dropdown-inner">
+
+<p>
+Nada es más importante que tu presencia,<br>
+pero si deseas hacerme un regalo puedes depositarlo en el siguiente alias:
+</p>
+
+<br>
+
+<div class="alias-box">
+<span class="alias-value">nacho.alborno</span>
+<button class="copy-btn" type="button" onclick="copyAlias()" aria-label="Copiar alias">
+<svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<div class="final">
+
+<div class="gold-line"></div>
+
+<div class="section-title">
+¡LOS ESPERO!
+</div>
+
+PARA FESTEJAR<br>
+UNA GRAN NOCHE JUNTOS!
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+const eventDate =
+new Date(2026,11,5,21,0,0);
+
+function updateCountdown(){
+
+const now = new Date();
+
+const diff = eventDate - now;
+
+const days =
+Math.floor(diff / (1000*60*60*24));
+
+const hours =
+Math.floor((diff / (1000*60*60)) % 24);
+
+const minutes =
+Math.floor((diff / 1000 / 60) % 60);
+
+const seconds =
+Math.floor((diff / 1000) % 60);
+
+document.getElementById("days")
+.innerText =
+String(days).padStart(2,"0");
+
+document.getElementById("hours")
+.innerText =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes")
+.innerText =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds")
+.innerText =
+String(seconds).padStart(2,"0");
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+/* =========================================
+   PLAYER
+========================================= */
+
+const audio =
+document.getElementById('audio');
+
+const playPauseIcon =
+document.getElementById('playPauseIcon');
+
+const progressContainer =
+document.querySelector('.progress-container');
+
+const progress =
+document.getElementById('progress');
+
+const progressIndicator =
+document.getElementById('progress-indicator');
+
+const currentTimeEl =
+document.getElementById('current-time');
+
+const durationEl =
+document.getElementById('duration');
+
+function togglePlayPause() {
+
+  if(audio.paused){
+
+    audio.play();
+
+    playPauseIcon.src =
+    "https://img.icons8.com/ios-filled/50/000000/pause.png";
+
+  } else {
+
+    audio.pause();
+
+    playPauseIcon.src =
+    "https://img.icons8.com/ios-filled/50/000000/play.png";
+
+  }
+
+}
+
+audio.onloadedmetadata = function(){
+
+  durationEl.textContent =
+  formatTime(audio.duration);
+
+};
+
+audio.ontimeupdate = function(){
+
+  currentTimeEl.textContent =
+  formatTime(audio.currentTime);
+
+  const progressPercent =
+  (audio.currentTime / audio.duration) * 100;
+
+  progress.style.width =
+  `${progressPercent}%`;
+
+  progressIndicator.style.left =
+  `calc(${progressPercent}% - 7px)`;
+
+};
+
+function setProgress(event){
+
+  const width =
+  progressContainer.clientWidth;
+
+  const clickX =
+  event.offsetX;
+
+  audio.currentTime =
+  (clickX / width) * audio.duration;
+
+}
+
+function skip(seconds){
+
+  audio.currentTime =
+  Math.min(
+    Math.max(
+      0,
+      audio.currentTime + seconds
+    ),
+    audio.duration
+  );
+
+}
+
+function formatTime(seconds){
+
+  const minutes =
+  Math.floor(seconds / 60);
+
+  const secs =
+  Math.floor(seconds % 60);
+
+  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+
+}
+
+/* =========================================
+   DESPLEGABLE
+========================================= */
+
+function toggleContribution(){
+
+const box =
+document.getElementById(
+"contributionBox");
+
+box.classList.toggle("active");
+
+}
+
+function copyAlias(){
+  const alias = 'nacho.alborno';
+  const button = document.querySelector('.copy-btn');
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(alias).then(() => {
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.classList.remove('copied');
+      }, 1400);
+    });
+  } else {
+    const textarea = document.createElement('textarea');
+    textarea.value = alias;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    button.classList.add('copied');
+    setTimeout(() => {
+      button.classList.remove('copied');
+    }, 1400);
+  }
+}
+
+const sectionIcons =
+document.querySelectorAll('.section-icon');
+
+const iconObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.35,
+});
+
+sectionIcons.forEach((icon) => {
+  iconObserver.observe(icon);
+  icon.addEventListener('pointerenter', () => {
+    icon.classList.add('animate');
+  });
+  icon.addEventListener('animationend', () => {
+    icon.classList.remove('animate');
+  });
+});
+
+</script>
+
+</body>
+</html>
